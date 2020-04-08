@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ScreenSaver</title>
+</head>
+
+<body>
+	3秒后弹出问候。
+	<div style="border: 1px solid #666; margin: 20px;width: 40px; text-align: center;" onclick="test();">alert</div>
+</body>
+<script type="text/javascript">
+	function test() {
+		alert(666)
+	}
+
+	function ScreenSaver(settings) {
+		this.settings = settings;
+
+		this.nTimeout = this.settings.timeout;
+
+		document.body.screenSaver = this;
+		// link in to body events     
+		document.body.onmousemove = ScreenSaver.prototype.onevent;
+		document.body.onmousedown = ScreenSaver.prototype.onevent;
+		document.body.onkeydown = ScreenSaver.prototype.onevent;
+		document.body.onkeypress = ScreenSaver.prototype.onevent;
+
+		var pThis = this;
+		var f = function () { pThis.timeout(); }
+		this.timerID = window.setTimeout(f, this.nTimeout);
+	}
+
+	ScreenSaver.prototype.timeout = function () {
+		if (!this.saver) {
+			// window.location = 'http://www.baidu.com';
+			alert('跑哪去了，没事走两步。')
+		}
+	}
+
+	ScreenSaver.prototype.signal = function () {
+		if (this.saver) {
+			this.saver.stop();
+		}
+
+		window.clearTimeout(this.timerID);
+
+		var pThis = this;
+		var f = function () { pThis.timeout(); }
+		this.timerID = window.setTimeout(f, this.nTimeout);
+	}
+
+	ScreenSaver.prototype.onevent = function (e) {
+		this.screenSaver.signal();
+	}
+
+
+	var saver;
+	window.onload = function () {
+		saver = new ScreenSaver({ timeout: 3000 });
+	}
+
+
+</script>
+
+</html>
