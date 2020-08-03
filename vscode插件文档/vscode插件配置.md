@@ -13,6 +13,26 @@ V8: 7.8.279.23-electron.0
 OS: Windows_NT x64 10.0.18362
 ```
 
+## 总览
+
+- Quokka.js
+- Markdown Paste
+- Code Spell Checker
+- Prettier
+- Rainbow Brackets
+- 汉化插件
+- CSS Modules
+- CSS Peek
+- Turbo Console Log
+- Debugger for Chrome
+- Markdown All in One
+- Auto Rename Tag
+- open in browser
+- path intellisense
+- ES7 React/Redux/React-Native/JS snippets
+- vscode-icons
+- GitLens
+
 ## 1. Quokka.js
 
 Quokka 是一个调试工具，可以为您正在编写的代码提供实时反馈。它能够预览变量的函数和计算值结果。该扩展易于配置，对于使用 JSX 或 TypeScript 的项目可直接使用。
@@ -25,7 +45,7 @@ Quokka 是一个调试工具，可以为您正在编写的代码提供实时反�
 
 ## 2. Markdown Paste
 
-将图片复制之后可以将图片粘贴到.md 文件中,可以修改图片名字以及路径
+将图片复制之后可以将图片粘贴到`.md` 文件中,可以修改图片名字以及路径
 
 - 使用:
   - 安装 Markdown Paste
@@ -73,14 +93,14 @@ var liep = 1;
 // cSpell:enable
 // It is now enabled
 
-const str = "goededag"; // <- will be flagged as an error.
+const str = 'goededag'; // <- will be flagged as an error.
 
 // spell-checker:enable <- doesn't do anything
 
 // cSPELL:DISABLE <-- also works.
 
 // if there isn't an enable, spelling is disabled till the end of the file.
-const str = "goedemorgen"; // <- will NOT be flagged as an error.
+const str = 'goedemorgen'; // <- will NOT be flagged as an error.
 ```
 
 - 忽略
@@ -90,14 +110,14 @@ const str = "goedemorgen"; // <- will NOT be flagged as an error.
   ```js
   // cSpell:ignore zaallano, wooorrdd
   // cSpell:ignore zzooommmmmmmm
-  const wackyWord = ["zaallano", "wooorrdd", "zzooommmmmmmm"];
+  const wackyWord = ['zaallano', 'wooorrdd', 'zzooommmmmmmm'];
   ```
 
   你可以创建某些自定义的短语，它也可以作为替代的建议选项。
 
   ```js
   // cSpell:words woorxs sweeetbeat
-  const companyName = "woorxs sweeetbeat";
+  const companyName = 'woorxs sweeetbeat';
   ```
 
 ## 4.Prettier
@@ -115,11 +135,11 @@ eslint 只能进行部分格式化，但这个格式化只是用来修正规范�
 
 配置:
 
-- 项目根目录添加`.prettierrc.json`文件
+- 项目根目录添加`.prettierrc`文件
 
 ```js
 {
-//建议去掉注释
+//需要去掉注释
 "singleQuote": true,
 //使用单引号
 "trailingComma": "es5",
