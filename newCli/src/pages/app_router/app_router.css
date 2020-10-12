@@ -1,0 +1,15 @@
+.site-layout-content {
+    background: #fff;
+    padding: 24px;
+}
+.logo {
+    width: 50px;
+    height: 31px;
+    background-image: url(../../assets/logo.svg);
+    background-repeat: no-repeat;
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+section.ant-layout {
+    height: 100%;
+}
